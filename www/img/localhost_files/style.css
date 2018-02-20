@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Merienda+One');
+
+
+body{
+font-family: 'Fjalla One', sans-serif;
+
+}
+
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+font-family: 'Merienda One', cursive;
+}
+
+
+p{
+	letter-spacing: 2px;
+}
+
+
+.black-font{
+	color: #000;
+}
+.gold-font{
+	color: #b19b4b;
+}
+
+.bg-light{
+background-color: #fef7f9;
+background: url(../img/fundo.png) top left,
+url(../img/fundoright.png) bottom right ;
+background-repeat: no-repeat;
+
+}
+.cicle-image{
+ height: 40vw; 
+     width: 40vw; 
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px gray;
+    display: inline-block;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 10px;
+   
+
+}
+
+.center{
+	margin:0;
+	text-align: center;
+}
+
+
+.cicle-image > img{
+	    position: relative;
+    width:40vw;
+    top: -27vw;
+}
+
+.sep{
+  
+ 
+   font-size: 22px
+}
+
+.line{
+   width:100%;
+   background-color: #000;
+   position: absolute;
+   height: 10px;
+   float:left;
+
+ 
+}
+
+h2 i{
+	color:#b19b4b;
+}
+
+h2.background
+{
+  position: relative;
+  z-index: 1;
+  text-align:center;
+}
+h2::before
+{
+  border-top: 3px solid #b19b4b;
+  content:"";
+  margin: 0 auto;
+  position: absolute; 
+  top: 50%; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+}
+h2 span
+{
+  background: #fef7f9; 
+  padding: 0 10px; 
+  color:#b19b4b;
+}
+
+.m-b-5{
+   margin-bottom: 5px;
+
+}
+
+.m-b-10{
+   margin-bottom: 10px;
+
+}
+
+.m-b-20{
+   margin-bottom: 20px;
+
+}
+
+
+/*Fontes*/
+.bold{
+ font-weight: 600;
+}
+
+
+.f-18{
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.f-20{
+	font-size: 20px;
+}
+
+.f-22{
+	font-size: 22px;
+}
+
+.f-24{
+	font-size: 24px;
+}
+
+
+
+/*botoes*/
+.tab-nav.tabs{
+	border:none !important;
+}
+.tab-nav.tabs,
+a.tab-item{
+	background-color: #aba8a0a6;
+	color: #000;
+}
+
+a.tab-item.tab-item-active {
+   background-color: #7d6d3640;
+    color: #000;
+}
+
+
+#map {
+  width: 100%;
+  height: 50%;
+}
+
+.scroll {
+  height: 100%;
+}
+
+
+.tabs-striped.tabs-stable .tabs {
+    background-color: #ded5b2;
+}

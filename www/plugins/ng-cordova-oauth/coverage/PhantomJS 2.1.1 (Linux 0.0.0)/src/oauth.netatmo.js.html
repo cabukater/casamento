@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/oauth.netatmo.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> oauth.netatmo.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.41% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>10/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.41% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>10/49</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
+  'use strict';
+&nbsp;
+  angular.module('oauth.netatmo', ['oauth.utils']).factory('$ngCordovaNetatmo', netatmo);
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function netatmo($q, $http, $cordovaOauthUtility) {</span>
+<span class="cstat-no" title="statement not covered" >    return { signin: oauthNetatmo };</span>
+&nbsp;
+    /*
+     * Sign into the Netatmo service
+     *
+     * @param    string clientId
+     * @param    string clientSecret
+     * @param    string appScope
+     * @param    object options
+     * @return   promise
+     */
+<span class="fstat-no" title="function not covered" >    function oauthNetatmo(options) {</span>
+      
+<span class="cstat-no" title="statement not covered" >      var deferred = $q.defer();</span>
+<span class="cstat-no" title="statement not covered" >      var fetchingToken = false;</span>
+<span class="cstat-no" title="statement not covered" >      var clientId = (options.clientId)? options.clientId: null;</span>
+<span class="cstat-no" title="statement not covered" >      var clientSecret = (options.clientSecret)? options.clientSecret: null;</span>
+<span class="cstat-no" title="statement not covered" >      var appScope = (options.appScope)? options.appScope: null;</span>
+<span class="cstat-no" title="statement not covered" >      var state = (options.state)? options.state: Math.random().toString(36).substr(2, 5);</span>
+<span class="cstat-no" title="statement not covered" >      var inappbrowserOptions = (options.inappbrowserOptions)? options.inappbrowserOptions: 'location=no,clearsessioncache=yes,clearcache=yes';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if(window.cordova) {        </span>
+<span class="cstat-no" title="statement not covered" >        if($cordovaOauthUtility.isInAppBrowserInstalled()) {</span>
+          
+<span class="cstat-no" title="statement not covered" >          var redirect_uri = "http://localhost/callback";</span>
+<span class="cstat-no" title="statement not covered" >          var authorize_uri = 'https://api.netatmo.com/oauth2/authorize?client_id=' + clientId + '&amp;redirect_uri=' + redirect_uri + '&amp;scope=' + appScope +'&amp;state='+ state;</span>
+<span class="cstat-no" title="statement not covered" >          var browserRef = window.cordova.InAppBrowser.open(authorize_uri, '_blank', inappbrowserOptions);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          browserRef.addEventListener('loadstart', inappbrowserLoadStarted);          </span>
+<span class="cstat-no" title="statement not covered" >          browserRef.addEventListener('exit', inapbrowserExited);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          deferred.reject({error: "no_inappbrowser_plugin"});</span>
+        }
+      } else {
+<span class="cstat-no" title="statement not covered" >        deferred.reject({error: "no_inappbrowser_plugin"});</span>
+      }
+&nbsp;
+<span class="fstat-no" title="function not covered" >      function inappbrowserLoadStarted(event){</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var hasNoRedirectUri = (event.url).indexOf(redirect_uri) === 0;</span>
+<span class="cstat-no" title="statement not covered" >        var redirectUriMatch = (event.url).split("?")[0] === redirect_uri;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if(hasNoRedirectUri &amp;&amp; redirectUriMatch) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          fetchingToken = true;</span>
+<span class="cstat-no" title="statement not covered" >          browserRef.close();</span>
+&nbsp;
+          //get response url parameters
+<span class="cstat-no" title="statement not covered" >          var callbackResponse = (event.url).split("?")[1];</span>
+<span class="cstat-no" title="statement not covered" >          var responseParameters = (callbackResponse).split("&amp;");</span>
+<span class="cstat-no" title="statement not covered" >          var urlParameters = [];</span>
+<span class="cstat-no" title="statement not covered" >          for(var i = 0; i &lt; responseParameters.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            urlParameters[responseParameters[i].split("=")[0]] = responseParameters[i].split("=")[1];</span>
+          }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          var requestToken = urlParameters.code;</span>
+<span class="cstat-no" title="statement not covered" >          var responseState = urlParameters.state;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          if(state === responseState){</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var httpOptions = {</span>
+              method: "post", 
+              url: "https://api.netatmo.com/oauth2/token", 
+              data: 'grant_type=authorization_code&amp;client_id='+ clientId +'&amp;client_secret='+ clientSecret +'&amp;code='+ requestToken +'&amp;scope='+ appScope +'&amp;redirect_uri='+ redirect_uri,
+              headers: {
+                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+               },
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $http(httpOptions).success(requestTokenSuccess).error(requestTokenError).finally(requestTokenFinally);</span>
+          } else {
+<span class="cstat-no" title="statement not covered" >            deferred.reject({error: "string_missmatch"});</span>
+          }
+        }
+<span class="fstat-no" title="function not covered" >        function requestTokenSuccess(success){</span>
+<span class="cstat-no" title="statement not covered" >          deferred.resolve(success);</span>
+        }
+<span class="fstat-no" title="function not covered" >        function requestTokenError(error){</span>
+<span class="cstat-no" title="statement not covered" >          deferred.reject(error);</span>
+        }
+<span class="fstat-no" title="function not covered" >        function requestTokenFinally(){</span>}
+      }
+<span class="fstat-no" title="function not covered" >      function inapbrowserExited(event){</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if(!fetchingToken){</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          var error = {error: "flow_canceled"};</span>
+<span class="cstat-no" title="statement not covered" >          deferred.reject(error);</span>
+        }
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return deferred.promise;</span>
+    }
+  }
+&nbsp;
+  netatmo.$inject = ['$q', '$http', '$cordovaOauthUtility'];
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Apr 25 2017 15:58:32 GMT-0300 (-03)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

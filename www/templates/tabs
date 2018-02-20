@@ -1,0 +1,11 @@
+  <ion-tabs class="tabs-stable tabs-icon-top tabs" id="tabsController-tabs1">
+    <ion-tab title="Convite" icon="ion-ios-flag-outline" href="#/page1/casamento" id="tabsController-tab1">
+      <ion-nav-view name="tab1"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Ver no GPS" icon="ion-ios-location-outline" href="#/page1/page5" id="tabsController-tab2">
+      <ion-nav-view name="tab2"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Confirmar Presença" icon="ion-ios-calendar-outline" href="#/page1/confirm" id="tabsController-tab4">
+      <ion-nav-view name="tab4"></ion-nav-view>
+    </ion-tab>
+  </ion-tabs>

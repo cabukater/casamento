@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/oauth.accountkit.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> oauth.accountkit.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.83% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>5/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.83% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/24</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
+  'use strict';
+&nbsp;
+  angular.module('oauth.accountkit', ['oauth.utils'])
+    .factory('$ngCordovaAccountKit', accountKit);
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function accountKit($q, $http, $cordovaOauthUtility) {</span>
+<span class="cstat-no" title="statement not covered" >    return { signin: oauthaccountkit };</span>
+&nbsp;
+    /*
+     * Sign into the 500px service
+     *
+     * @param    string sdkKey
+     * @param    object options
+     * @return   promise
+     */
+<span class="fstat-no" title="function not covered" >    function oauthaccountkit(url_app, uri) {</span>
+<span class="cstat-no" title="statement not covered" >      var deferred = $q.defer();</span>
+<span class="cstat-no" title="statement not covered" >      if(window.cordova) {</span>
+<span class="cstat-no" title="statement not covered" >        if($cordovaOauthUtility.isInAppBrowserInstalled()) {</span>
+<span class="cstat-no" title="statement not covered" >          var redirect_uri = "http://localhost/callback";</span>
+<span class="cstat-no" title="statement not covered" >          if(typeof uri !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >                redirect_uri = uri;</span>
+          }
+<span class="cstat-no" title="statement not covered" >          var api_id = '531228893597329';</span>
+<span class="cstat-no" title="statement not covered" >          var browserRef = window.cordova.InAppBrowser.open('https://www.accountkit.com/v1.0/dialog/sms_login/?app_id='+api_id+'&amp;country_code=%2B55&amp;fb_app_events_enabled=true&amp;locale=pt_BR&amp;logging_ref=f2b531fda08f9f4&amp;origin=' + url_app + '&amp;sdk=web&amp;state=abcd', '_blank', 'toolbar=no,zoom=no,location=no,clearsessioncache=yes,clearcache=yes');</span>
+<span class="cstat-no" title="statement not covered" >          browserRef.addEventListener('loadstart', <span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if((event.url).indexOf(redirect_uri) === 0) {</span>
+<span class="cstat-no" title="statement not covered" >              var accessToken = (event.url).split("#token:")[1].split(',')[0];</span>
+<span class="cstat-no" title="statement not covered" >                deferred.resolve({error: false, success: true, access_token: accessToken, callback: redirect_uri});</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >              deferred.reject({success: false, callback: redirect_uri, error: true, access_token: null});</span>
+            }
+          });
+<span class="cstat-no" title="statement not covered" >          browserRef.addEventListener('exit', <span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >            deferred.reject("The sign in flow was canceled");</span>
+          });
+        } else {
+<span class="cstat-no" title="statement not covered" >          deferred.reject("Could not find InAppBrowser plugin");</span>
+        }
+      } else {
+<span class="cstat-no" title="statement not covered" >        deferred.reject("Cannot authenticate via a web browser");</span>
+      }
+<span class="cstat-no" title="statement not covered" >      return deferred.promise;</span>
+    }
+  }
+&nbsp;
+  accountKit.$inject = ['$q', '$http', '$cordovaOauthUtility'];
+})();</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Apr 25 2017 15:58:32 GMT-0300 (-03)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

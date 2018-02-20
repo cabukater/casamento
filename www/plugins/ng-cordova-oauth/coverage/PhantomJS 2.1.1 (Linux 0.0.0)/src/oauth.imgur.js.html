@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/oauth.imgur.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> oauth.imgur.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.13% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>5/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.13% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/31</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
+  'use strict';
+&nbsp;
+  angular.module('oauth.imgur', ['oauth.utils'])
+    .factory('$ngCordovaImgur', imgur);
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function imgur($q, $http, $cordovaOauthUtility) {</span>
+<span class="cstat-no" title="statement not covered" >    return { signin: oauthImgur };</span>
+&nbsp;
+    /*
+     * Sign into the Imgur service
+     *
+     * @param    string clientId
+     * @param    object options
+     * @return   promise
+     */
+<span class="fstat-no" title="function not covered" >    function oauthImgur(clientId, options) {</span>
+<span class="cstat-no" title="statement not covered" >      var deferred = $q.defer();</span>
+<span class="cstat-no" title="statement not covered" >      if(window.cordova) {</span>
+<span class="cstat-no" title="statement not covered" >        if($cordovaOauthUtility.isInAppBrowserInstalled()) {</span>
+<span class="cstat-no" title="statement not covered" >          var redirect_uri = "http://localhost/callback";</span>
+<span class="cstat-no" title="statement not covered" >          if(options !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >            if(options.hasOwnProperty("redirect_uri")) {</span>
+<span class="cstat-no" title="statement not covered" >              redirect_uri = options.redirect_uri;</span>
+            }
+          }
+<span class="cstat-no" title="statement not covered" >          var browserRef = window.cordova.InAppBrowser.open('https://api.imgur.com/oauth2/authorize?client_id=' + clientId + '&amp;response_type=token', '_blank', 'location=no,clearsessioncache=yes,clearcache=yes');</span>
+<span class="cstat-no" title="statement not covered" >          browserRef.addEventListener('loadstart', <span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if((event.url).indexOf(redirect_uri) === 0) {</span>
+<span class="cstat-no" title="statement not covered" >              browserRef.removeEventListener("exit",<span class="fstat-no" title="function not covered" >function(event){</span>});</span>
+<span class="cstat-no" title="statement not covered" >              browserRef.close();</span>
+<span class="cstat-no" title="statement not covered" >              var callbackResponse = (event.url).split("#")[1];</span>
+<span class="cstat-no" title="statement not covered" >              var responseParameters = (callbackResponse).split("&amp;");</span>
+<span class="cstat-no" title="statement not covered" >              var parameterMap = [];</span>
+<span class="cstat-no" title="statement not covered" >              for(var i = 0; i &lt; responseParameters.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                parameterMap[responseParameters[i].split("=")[0]] = responseParameters[i].split("=")[1];</span>
+              }
+<span class="cstat-no" title="statement not covered" >              if(parameterMap.access_token !== undefined &amp;&amp; parameterMap.access_token !== null) {</span>
+<span class="cstat-no" title="statement not covered" >                deferred.resolve({ access_token: parameterMap.access_token, expires_in: parameterMap.expires_in, account_username: parameterMap.account_username });</span>
+              } else {
+<span class="cstat-no" title="statement not covered" >                deferred.reject("Problem authenticating");</span>
+              }
+            }
+          });
+<span class="cstat-no" title="statement not covered" >          browserRef.addEventListener('exit', <span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >            deferred.reject("The sign in flow was canceled");</span>
+          });
+        } else {
+<span class="cstat-no" title="statement not covered" >          deferred.reject("Could not find InAppBrowser plugin");</span>
+        }
+      } else {
+<span class="cstat-no" title="statement not covered" >        deferred.reject("Cannot authenticate via a web browser");</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return deferred.promise;</span>
+    }
+  }
+&nbsp;
+  imgur.$inject = ['$q', '$http', '$cordovaOauthUtility'];
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Apr 25 2017 15:58:32 GMT-0300 (-03)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

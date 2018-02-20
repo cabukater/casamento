@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/oauth.twitter.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> oauth.twitter.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.26% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>5/54</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.09% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.26% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/54</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
+  'use strict';
+&nbsp;
+  angular.module('oauth.twitter', ['oauth.utils'])
+    .factory('$ngCordovaTwitter', twitter);
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function twitter($q, $http, $cordovaOauthUtility) {</span>
+<span class="cstat-no" title="statement not covered" >    return { signin: oauthTwitter };</span>
+&nbsp;
+    /*
+     * Sign into the Twitter service
+     * Note that this service requires jsSHA for generating HMAC-SHA1 Oauth 1.0 signatures
+     *
+     * @param    string clientId
+     * @param    string clientSecret
+     * @return   promise
+     */
+<span class="fstat-no" title="function not covered" >    function oauthTwitter(clientId, clientSecret, options) {</span>
+<span class="cstat-no" title="statement not covered" >      var deferred = $q.defer();</span>
+<span class="cstat-no" title="statement not covered" >      if(window.cordova) {</span>
+<span class="cstat-no" title="statement not covered" >        if($cordovaOauthUtility.isInAppBrowserInstalled()) {</span>
+<span class="cstat-no" title="statement not covered" >          var redirect_uri = "http://localhost/callback";</span>
+<span class="cstat-no" title="statement not covered" >          if(options !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >            if(options.hasOwnProperty("redirect_uri")) {</span>
+<span class="cstat-no" title="statement not covered" >                redirect_uri = options.redirect_uri;</span>
+            }
+          }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          if(typeof jsSHA !== "undefined") {</span>
+<span class="cstat-no" title="statement not covered" >            var oauthObject = {</span>
+              oauth_consumer_key: clientId,
+              oauth_nonce: $cordovaOauthUtility.createNonce(10),
+              oauth_signature_method: "HMAC-SHA1",
+              oauth_timestamp: Math.round((new Date()).getTime() / 1000.0),
+              oauth_version: "1.0"
+            };
+<span class="cstat-no" title="statement not covered" >            var signatureObj = $cordovaOauthUtility.createSignature("POST", "https://api.twitter.com/oauth/request_token", oauthObject,  { oauth_callback: redirect_uri }, clientSecret);</span>
+<span class="cstat-no" title="statement not covered" >            $http({</span>
+              method: "post",
+              url: "https://api.twitter.com/oauth/request_token",
+              headers: {
+                  "Authorization": signatureObj.authorization_header,
+                  "Content-Type": "application/x-www-form-urlencoded"
+              },
+              data: "oauth_callback=" + encodeURIComponent(redirect_uri)
+            })
+              .success(<span class="fstat-no" title="function not covered" >function(requestTokenResult) {</span>
+<span class="cstat-no" title="statement not covered" >                var requestTokenParameters = (requestTokenResult).split("&amp;");</span>
+<span class="cstat-no" title="statement not covered" >                var parameterMap = {};</span>
+<span class="cstat-no" title="statement not covered" >                for(var i = 0; i &lt; requestTokenParameters.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                  parameterMap[requestTokenParameters[i].split("=")[0]] = requestTokenParameters[i].split("=")[1];</span>
+                }
+<span class="cstat-no" title="statement not covered" >                if(parameterMap.hasOwnProperty("oauth_token") === false) {</span>
+<span class="cstat-no" title="statement not covered" >                  deferred.reject("Oauth request token was not received");</span>
+                }
+<span class="cstat-no" title="statement not covered" >                var browserRef = window.cordova.InAppBrowser.open('https://api.twitter.com/oauth/authenticate?oauth_token=' + parameterMap.oauth_token, '_blank', 'location=no,clearsessioncache=yes,clearcache=yes');</span>
+<span class="cstat-no" title="statement not covered" >                browserRef.addEventListener('loadstart', <span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >                  if((event.url).indexOf(redirect_uri) === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    var callbackResponse = (event.url).split("?")[1];</span>
+<span class="cstat-no" title="statement not covered" >                    var responseParameters = (callbackResponse).split("&amp;");</span>
+<span class="cstat-no" title="statement not covered" >                    var parameterMap = {};</span>
+<span class="cstat-no" title="statement not covered" >                    for(var i = 0; i &lt; responseParameters.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                      parameterMap[responseParameters[i].split("=")[0]] = responseParameters[i].split("=")[1];</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    if(parameterMap.hasOwnProperty("oauth_verifier") === false) {</span>
+<span class="cstat-no" title="statement not covered" >                      deferred.reject("Browser authentication failed to complete.  No oauth_verifier was returned");</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    delete oauthObject.oauth_signature;</span>
+<span class="cstat-no" title="statement not covered" >                    oauthObject.oauth_token = parameterMap.oauth_token;</span>
+<span class="cstat-no" title="statement not covered" >                    var signatureObj = $cordovaOauthUtility.createSignature("POST", "https://api.twitter.com/oauth/access_token", oauthObject,  { oauth_verifier: parameterMap.oauth_verifier }, clientSecret);</span>
+<span class="cstat-no" title="statement not covered" >                    $http({</span>
+                      method: "post",
+                      url: "https://api.twitter.com/oauth/access_token",
+                      headers: {
+                          "Authorization": signatureObj.authorization_header
+                      },
+                      params: {
+                          "oauth_verifier": parameterMap.oauth_verifier
+                      }
+                    })
+                      .success(<span class="fstat-no" title="function not covered" >function(result) {</span>
+<span class="cstat-no" title="statement not covered" >                        var accessTokenParameters = result.split("&amp;");</span>
+<span class="cstat-no" title="statement not covered" >                        var parameterMap = {};</span>
+<span class="cstat-no" title="statement not covered" >                        for(var i = 0; i &lt; accessTokenParameters.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                          parameterMap[accessTokenParameters[i].split("=")[0]] = accessTokenParameters[i].split("=")[1];</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        if(parameterMap.hasOwnProperty("oauth_token_secret") === false) {</span>
+<span class="cstat-no" title="statement not covered" >                          deferred.reject("Oauth access token was not received");</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        deferred.resolve(parameterMap);</span>
+                      })
+                      .error(<span class="fstat-no" title="function not covered" >function(error) {</span>
+<span class="cstat-no" title="statement not covered" >                        deferred.reject(error);</span>
+                      })
+                      .finally(<span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >                        setTimeout(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                            browserRef.close();</span>
+                        }, 10);
+                      });
+                  }
+                });
+<span class="cstat-no" title="statement not covered" >                browserRef.addEventListener('exit', <span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >                  deferred.reject("The sign in flow was canceled");</span>
+                });
+              })
+              .error(<span class="fstat-no" title="function not covered" >function(error) {</span>
+<span class="cstat-no" title="statement not covered" >                deferred.reject(error);</span>
+              });
+          } else {
+<span class="cstat-no" title="statement not covered" >              deferred.reject("Missing jsSHA JavaScript library");</span>
+          }
+        } else {
+<span class="cstat-no" title="statement not covered" >            deferred.reject("Could not find InAppBrowser plugin");</span>
+        }
+      } else {
+<span class="cstat-no" title="statement not covered" >        deferred.reject("Cannot authenticate via a web browser");</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return deferred.promise;</span>
+    }
+  }
+&nbsp;
+  twitter.$inject = ['$q', '$http', '$cordovaOauthUtility'];
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Apr 25 2017 15:58:32 GMT-0300 (-03)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
